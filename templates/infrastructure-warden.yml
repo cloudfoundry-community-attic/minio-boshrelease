@@ -30,8 +30,8 @@ networks:
 - name: minio_ferris1
   type: manual
   subnets:
-  - range: 10.244.31.0/24
+  - range: 10.244.107.0/24
     name: minio_ferris1
-    gateway: 10.244.31.1
+    gateway: 10.244.107.1
     static:
-      - 10.244.31.2 - 10.244.31.60
+      - 10.244.107.2 - 10.244.107.60
