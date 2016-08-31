@@ -1,1 +1,5 @@
---- {}
+---
+minio/minio:
+  object_id: d9753180-2662-4f97-896b-164755b832cf
+  sha: 2969d918df21f7771d9c6c10b09fd9993064b18c
+  size: 22065016

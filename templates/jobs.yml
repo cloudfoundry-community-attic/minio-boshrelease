@@ -7,15 +7,19 @@ update:
   serial: false
 
 jobs:
-  - name: just_install_packages
-    templates:
-    - name: just_install_packages
-      release: minio-ferris
-    instances: 1
-    persistent_disk: 0
-    resource_pool: small_z1
-    networks: (( param "Please configure the networks for this job" ))
+- instances: 1
+  name: minio-server
+  networks:
+  - name: minio_ferris1
+  persistent_disk: 0
+  resource_pool: small_z1
+  templates:
+  - name: minio-server
+    release: minio-ferris
 
 networks: (( param "Please configure the global network definitions for this Deployment" ))
 
-properties: {}
+properties:
+  minio:
+    access_key: "defaultaccesskey"
+    secret_key: "defaultsecretkey"

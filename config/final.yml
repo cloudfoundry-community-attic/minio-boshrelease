@@ -2,5 +2,5 @@
 blobstore:
   provider: s3
   options:
-    bucket_name: minio-ferris-boshrelease
-final_name: minio-ferris
+    bucket_name: minio-release
+final_name: minio

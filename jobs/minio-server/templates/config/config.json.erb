@@ -1,0 +1,29 @@
+{
+        "version": "6",
+        "credential": {
+                "accessKey": "<%= p('minio.access_key') %>",
+                "secretKey": "<%= p('minio.secret_key') %>"
+        },
+        "region": "us-east-1",
+        "logger": {
+                "console": {
+                        "enable": true,
+                        "level": "fatal"
+                },
+                "file": {
+                        "enable": false,
+                        "fileName": "",
+                        "level": ""
+                },
+                "syslog": {
+                        "enable": false,
+                        "address": "",
+                        "level": ""
+                }
+        },
+        "notify": {
+                "amqp": null,
+                "elasticsearch": null,
+                "redis": null
+        }
+}
