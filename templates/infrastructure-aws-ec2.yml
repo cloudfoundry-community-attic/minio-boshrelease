@@ -11,7 +11,7 @@ meta:
 jobs:
   - name: just_install_packages
     networks:
-      - name: minio_ferris1
+      - name: minio1
     persistent_disk: (( grab meta.persistent_disk ))
 
 compilation:
@@ -27,7 +27,7 @@ networks:
   - name: floating
     type: vip
     cloud_properties: {}
-  - name: minio_ferris1
+  - name: minio1
     type: dynamic
     cloud_properties:
       security_groups: (( grab meta.security_groups ))

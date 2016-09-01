@@ -9,3 +9,18 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/config.json.erb: data/config.json
+
+properties:
+  minio.access_key:
+    description: "public access key for accessing the minio UI after it is running."
+    default: "defaultaccesskey"
+  minio.secret_key:
+    description: "secret access key for accessing the minio UI after it is running."
+    default: "defaultsecretkey"
+  minio.port:
+    description: "Port on which to run Minio server." 
+    default: "9000"
+
+
+    
+

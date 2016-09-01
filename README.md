@@ -1,4 +1,4 @@
-# BOSH Release for minio-ferris
+# BOSH Release for minio
 
 ## Usage
 
@@ -6,9 +6,9 @@ To use this bosh release, first upload it to your bosh:
 
 ```
 bosh target BOSH_HOST
-git clone https://github.com/cloudfoundry-community/minio-ferris-boshrelease.git
-cd minio-ferris-boshrelease
-bosh upload release releases/minio-ferris/minio-ferris-1.yml
+git clone https://github.com/cloudfoundry-community/minio-boshrelease.git
+cd minio-boshrelease
+bosh upload release releases/minio/minio-1.yml
 ```
 
 For [bosh-lite](https://github.com/cloudfoundry/bosh-lite), you can quickly create a deployment manifest & deploy a cluster. Note that this requires that you have installed [spruce](https://github.com/geofffranks/spruce).
@@ -34,14 +34,14 @@ Create a file `my-networking.yml`:
 ``` yaml
 ---
 networks:
-  - name: minio-ferris1
+  - name: minio1
     type: dynamic
     cloud_properties:
       security_groups:
-        - minio-ferris
+        - minio
 ```
 
-Where `- minio-ferris` means you wish to use an existing security group called `minio-ferris`.
+Where `- minio` means you wish to use an existing security group called `minio`.
 
 You now suffix this file path to the `make_manifest` command:
 

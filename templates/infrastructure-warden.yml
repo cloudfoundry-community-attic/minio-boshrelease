@@ -1,6 +1,6 @@
 ---
 meta:
-  environment: minio-ferris-warden
+  environment: minio-warden
 
   stemcell:
     name: bosh-warden-boshlite-ubuntu-trusty-go_agent
@@ -15,7 +15,7 @@ update:
 jobs:
   - name: minio-server
     networks:
-      - name: minio_ferris1
+      - name: minio1
 
 compilation:
   cloud_properties:
@@ -27,11 +27,11 @@ resource_pools:
       name: random
 
 networks:
-- name: minio_ferris1
+- name: minio1
   type: manual
   subnets:
   - range: 10.244.107.0/24
-    name: minio_ferris1
+    name: minio1
     gateway: 10.244.107.1
     static:
       - 10.244.107.2 - 10.244.107.60

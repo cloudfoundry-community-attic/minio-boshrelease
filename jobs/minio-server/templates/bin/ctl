@@ -19,7 +19,8 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
     mkdir -p /var/vcap/jobs/minio-server/data/certs
-    exec chpst -u vcap:vcap /var/vcap/packages/minio/minio --config-dir /var/vcap/jobs/minio-server/data/ server /var/vcap/store/ \
+    exec chpst -u vcap:vcap /var/vcap/packages/minio/minio  --config-dir \
+	/var/vcap/jobs/minio-server/data/ server --address :<%= p('minio.port') %> /var/vcap/store/ \
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;

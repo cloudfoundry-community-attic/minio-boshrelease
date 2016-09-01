@@ -10,12 +10,12 @@ jobs:
 - instances: 1
   name: minio-server
   networks:
-  - name: minio_ferris1
+  - name: minio1
   persistent_disk: 0
   resource_pool: small_z1
   templates:
   - name: minio-server
-    release: minio-ferris
+    release: minio
 
 networks: (( param "Please configure the global network definitions for this Deployment" ))
 
@@ -23,3 +23,4 @@ properties:
   minio:
     access_key: "defaultaccesskey"
     secret_key: "defaultsecretkey"
+    port:       "9001"
